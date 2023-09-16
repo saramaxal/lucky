@@ -1,0 +1,124 @@
+@font-face {
+    font-display: swap;
+    font-family: Poppins;
+    src: url("../fonts/Poppins-Bold.woff2") format("woff2");
+    font-weight: 700;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Poppins;
+    src: url("../fonts/Poppins-Medium.woff2") format("woff2");
+    font-weight: 500;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Poppins;
+    src: url("../fonts/Poppins-Regular.woff2") format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    src: url("../fonts/Roboto-Medium.woff2") format("woff2");
+    font-weight: 500;
+}
+
+html {
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    color: #2D2D2D;
+    background-color: #ECF7F3;
+}
+
+img,
+svg {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+button {
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: 0;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.container {
+    --padding: 30px;
+    --width: 1145px;
+    max-width: calc(var(--width) + 2*var(--padding));
+    margin: 0 auto;
+    padding-right: var(--padding);
+    padding-left: var(--padding);
+}
+
+.link-button {
+    display: inline-flex;
+    background-color: #48B774;
+    color: #FFF;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-button:hover {
+    background-color: #FF8345;
+}
+
+@media(max-width: 1244px) {
+    .container {
+        --width: 600px;
+    }
+}
+
+@media(max-width: 700px) {
+    .container {
+        --padding: 15px;
+    }
+}
