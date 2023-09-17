@@ -91,7 +91,7 @@ fieldset {
 
 .container {
     --padding: 30px;
-    --width: 1145px;
+    --width: 1155px;
     max-width: calc(var(--width) + 2*var(--padding));
     margin: 0 auto;
     padding-right: var(--padding);

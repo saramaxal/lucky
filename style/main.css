@@ -1,21 +1,121 @@
 .main__hero {
     position: relative;
-    overflow: hidden;
-    /* height: 660px; */
 
 }
 
 .hero__wrap-hero {
     position: absolute;
-    top: 103px;
+    top: 29px;
     left: 484px;
     z-index: -1;
-    width: 836px;
-    /* height: 557px; */
 }
 
-.hero__hero {
+.hero__wrap-image {
+    position: relative;
+    top: 74px;
+    left: 0;
+    max-width: 886px;
+    width: max-content;
+}
+
+.hero_flags {
+    border: 2px solid #E8E8E8;
+    border-radius: 50%;
+    max-width: 450px;
+    height: 450px;
     width: 100%;
+    top: 30px;
+    left: 190px;
+    position: absolute;
+    z-index: -2;
+}
+
+.hero__wrap-flag {
+    position: absolute;
+    --spinState: paused;
+
+    animation-name: startmove, spin;
+    animation-duration: 2s, 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1, infinite;
+    animation-delay: calc(3s + var(--numb)*0.4s), calc(-3s - var(--numb)*1s);
+    animation-fill-mode: both, both;
+    animation-play-state: running, var(--spinState);
+    width: 100%;
+    /* left: 405px; */
+
+    height: 100%;
+    line-height: 0;
+}
+
+.hero__flag {
+    --spinState: paused;
+    position: relative;
+    border: 10px solid #FFF;
+    border-radius: 50%;
+    animation: spin 5s linear infinite;
+    animation-direction: reverse;
+    animation-delay: calc(-3s - var(--numb)*1s);
+    animation-play-state: var(--spinState);
+    line-height: 0;
+    width: max-content;
+    margin: auto;
+    /* transform: translate(0, -50%); */
+}
+
+.hero__flag img {
+    top: -50%;
+    position: relative;
+}
+
+@keyframes startmove {
+    0% {
+        height: 0px;
+        top: 230px;
+    }
+
+    100% {
+        /* height: 460px; */
+        height: 100%;
+        top: 0px;
+    }
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(70deg);
+    }
+
+    40% {
+        transform: rotate(110deg);
+    }
+
+    44% {
+        transform: rotate(135deg);
+    }
+
+    56% {
+        transform: rotate(225deg);
+    }
+
+
+    60% {
+        transform: rotate(250deg);
+    }
+
+    80% {
+        transform: rotate(290deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
 }
 
 .hero__wrap-content {
@@ -27,7 +127,6 @@
     color: #2D2D2D;
     font-weight: 700;
     position: relative;
-    /* height: 183px; */
     margin-bottom: 22px;
 }
 
@@ -80,6 +179,18 @@
     font-family: Roboto, sans-serif;
     background-color: transparent;
     /* padding-right: 37px; */
+}
+
+.hero__wrap-input_error {
+    outline: 4px solid #FF8345;
+    position: relative;
+    --error-val: "";
+}
+
+.hero__wrap-input_error::after {
+    color: #FF8345;
+    position: absolute;
+    content: var(--error-val);
 }
 
 .hero__input:focus-visible {
@@ -194,7 +305,11 @@
     }
 
     .hero__input {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .hero__wrap-input_error::after {
+        font-size: 12px;
     }
 
     .hero__button-find {
